@@ -1,0 +1,34 @@
+{
+    "products": [
+        {
+            "icon": "pet-dog",
+            "name": "Cães",
+            "description": "Trabalhamos com as melhores marcas de rações, petiscos e tapetes. Temos a farmácia mais completa da região."
+        },
+        {
+            "icon": "pet-cat",
+            "name": "Gatos",
+            "description": "Temos rações, acessórios, petiscos e tudo que seu gato precisa."
+        },
+        {
+            "icon": "pet-bird",
+            "name": "Pássaros",
+            "description": "Temos misturas para pássaros, ninhos e acessórios."
+        },
+        {
+            "icon": "pet-fish",
+            "name": "Peixes",
+            "description": "Temos rações para todos os peixes de água doce."
+        },
+        {
+            "icon": "pet-rodent",
+            "name": "Roedores",
+            "description": "Aqui você encontra rações e acessórios para seu roedor."
+        },
+        {
+            "icon": "pet-shop",
+            "name": "Peça já",
+            "description": "Peça até as 14:30 de segunda a sábado e receba no mesmo dia. Não\ncobramos taxa para compras a partir de R$50,00 no raio de 3km da loja"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "question": "Quando vacinar meu pet?",
+      "answer": "Cães a partir de 45 dias de vida, desde que já tenha sido vermifugado. Gatos a partir de dois meses de vida, desde que já tenho sido vermifugado."
+    },
+    {
+      "question": "Por que castrar meu pet?",
+      "answer": "A castração previne doenças. Nas fêmeas a castração previne doenças como: infecção de útero, câncer de ovários e previne o câncer de mama. Nos machos previne tumores nos testículos e ajuda na prevenção de câncer de próstata."
+    },
+    {
+      "question": "Quando aplicar antipulga no meu pet?",
+      "answer": "É importante seu pet sempre estar prevenido contra pulgas e carrapatos pois transmitem doenças graves. A prevenção pode começar com o medicamento adequado a partir dos dois dias de vida. Consulte sem médico veterinário."
+    },
+    {
+      "question": "O que é preciso para viajar com seu pet?",
+      "answer": "Para viajar de avião ou ônibus é necessário estar com as vacinas em dia e passar em consulta com o veterinário para pegar um atestado de saúde. Além de seguir as exigências das empresas.Para viajar de carro é necessário a caixa de transporte ideal ou cinto de segurança, caso contrário está sujeito a multa grave. Além de somar cinco pontos à CNH, o condutor arca com a multa de R$127,69 e poderá ter o carro retido como medida administrativa até que a situação seja regularizada."
+    }
+  ]
+}

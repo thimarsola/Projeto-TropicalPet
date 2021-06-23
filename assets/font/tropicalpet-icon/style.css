@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'tropicalpet';
+  src:  url('../font/tropicalpet-icon/fonts/tropicalpet.eot?z620py');
+  src:  url('../font/tropicalpet-icon/fonts/tropicalpet.eot?z620py#iefix') format('embedded-opentype'),
+    url('../font/tropicalpet-icon/fonts/tropicalpet.ttf?z620py') format('truetype'),
+    url('../font/tropicalpet-icon/fonts/tropicalpet.woff?z620py') format('woff'),
+    url('../font/tropicalpet-icon/fonts/tropicalpet.svg?z620py#tropicalpet') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'tropicalpet' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pet-bird:before {
+  content: "\e900";
+}
+.pet-whatsapp:before {
+  content: "\e901";
+}
+.pet-cat:before {
+  content: "\e902";
+}
+.pet-dog:before {
+  content: "\e903";
+}
+.pet-facebook:before {
+  content: "\e904";
+}
+.pet-fish:before {
+  content: "\e905";
+}
+.pet-instagram:before {
+  content: "\e906";
+}
+.pet-logo:before {
+  content: "\e907";
+}
+.pet-rodent:before {
+  content: "\e908";
+}
+.pet-shop:before {
+  content: "\e909";
+}
+.pet-star:before {
+  content: "\e90a";
+}
+.pet-w3c:before {
+  content: "\e90b";
+}

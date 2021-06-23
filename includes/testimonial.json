@@ -1,0 +1,28 @@
+{
+    "testimonial": [
+        {
+            "name": "Ricardo Rocha",
+            "description": "Local agradável, tem tudo para os animaizinhos, funcionários atenciosos, prestativos, sem contar a Dra. Vânia, um amor de pessoa, super médica veterinária, muito atenciosa, e super profissional de alta qualidade, eu recomendo muito esse local."
+        },
+        {
+            "name": "Juliana Barreto",
+            "description": "A Dra Vânia veterinária do local é excelente, salvou a vida do meu bebê gato. Local limpo, organizado, e com bom preço, Vale muito a pena!"
+        },
+        {
+            "name": "Manuella Oliveira",
+            "description": "Excelente! Todos os profissionais são atenciosos, nos ajudam bastante. Bem como, vendem produtos de ótima qualidade e bom preço."
+        },
+        {
+            "name": "Ana Paula Almeida Ramos",
+            "description": "O melhor petshop da região. Encontro tudo que preciso por um preço justo. Sem contar com a veterinária maravilhosa, Dra. Vânia, que não troco por nada."
+        },
+        {
+            "name": "Braz Sena",
+            "description": "Sou cliente a muito tempo, e lá encontro os melhores preços, ótimo atendimento e um amplo estacionamento."
+        },
+        {
+            "name": "Wagner Hunter",
+            "description": "Muito bom o atendimento, super simpática. A veterinária foi muito atenciosa, cortez e educada. Super remendo!"
+        }
+    ]
+}
