@@ -1,5 +1,5 @@
 /*!
-* sweetalert2 v11.0.7
+* sweetalert2 v11.0.18
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -85,9 +85,6 @@
 
   const warnAboutDeprecation = (deprecatedParam, useInstead) => {
     warnOnce("\"".concat(deprecatedParam, "\" is deprecated and will be removed in the next major release. Please use \"").concat(useInstead, "\" instead."));
-  };
-  const runIfFunction = (fn, arg) => {
-    if (typeof fn === 'function') fn(arg);
   };
   /**
    * If `arg` is a function, call it (with no arguments or context) and return the result.
@@ -378,7 +375,7 @@
   // Detect Node env
   const isNodeEnv = () => typeof window === 'undefined' || typeof document === 'undefined';
 
-  const sweetHTML = "\n <div aria-labelledby=\"".concat(swalClasses.title, "\" aria-describedby=\"").concat(swalClasses['html-container'], "\" class=\"").concat(swalClasses.popup, "\" tabindex=\"-1\">\n   <button type=\"button\" class=\"").concat(swalClasses.close, "\"></button>\n   <ul class=\"").concat(swalClasses['progress-steps'], "\"></ul>\n   <div class=\"").concat(swalClasses.icon, "\"></div>\n   <img class=\"").concat(swalClasses.image, "\" />\n   <h2 class=\"").concat(swalClasses.title, "\" id=\"").concat(swalClasses.title, "\"></h2>\n   <div class=\"").concat(swalClasses['html-container'], "\"></div>\n   <input class=\"").concat(swalClasses.input, "\" />\n   <input type=\"file\" class=\"").concat(swalClasses.file, "\" />\n   <div class=\"").concat(swalClasses.range, "\">\n     <input type=\"range\" />\n     <output></output>\n   </div>\n   <select class=\"").concat(swalClasses.select, "\"></select>\n   <div class=\"").concat(swalClasses.radio, "\"></div>\n   <label for=\"").concat(swalClasses.checkbox, "\" class=\"").concat(swalClasses.checkbox, "\">\n     <input type=\"checkbox\" />\n     <span class=\"").concat(swalClasses.label, "\"></span>\n   </label>\n   <textarea class=\"").concat(swalClasses.textarea, "\"></textarea>\n   <div class=\"").concat(swalClasses['validation-message'], "\" id=\"").concat(swalClasses['validation-message'], "\"></div>\n   <div class=\"").concat(swalClasses.actions, "\">\n     <div class=\"").concat(swalClasses.loader, "\"></div>\n     <button type=\"button\" class=\"").concat(swalClasses.confirm, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.deny, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.cancel, "\"></button>\n   </div>\n   <div class=\"").concat(swalClasses.footer, "\"></div>\n   <div class=\"").concat(swalClasses['timer-progress-bar-container'], "\">\n     <div class=\"").concat(swalClasses['timer-progress-bar'], "\"></div>\n   </div>\n </div>\n").replace(/(^|\n)\s*/g, '');
+  const sweetHTML = "\n <div aria-labelledby=\"".concat(swalClasses.title, "\" aria-describedby=\"").concat(swalClasses['html-container'], "\" class=\"").concat(swalClasses.popup, "\" tabindex=\"-1\">\n   <button type=\"button\" class=\"").concat(swalClasses.close, "\"></button>\n   <ul class=\"").concat(swalClasses['progress-steps'], "\"></ul>\n   <div class=\"").concat(swalClasses.icon, "\"></div>\n   <img class=\"").concat(swalClasses.image, "\" />\n   <h2 class=\"").concat(swalClasses.title, "\" id=\"").concat(swalClasses.title, "\"></h2>\n   <div class=\"").concat(swalClasses['html-container'], "\" id=\"").concat(swalClasses['html-container'], "\"></div>\n   <input class=\"").concat(swalClasses.input, "\" />\n   <input type=\"file\" class=\"").concat(swalClasses.file, "\" />\n   <div class=\"").concat(swalClasses.range, "\">\n     <input type=\"range\" />\n     <output></output>\n   </div>\n   <select class=\"").concat(swalClasses.select, "\"></select>\n   <div class=\"").concat(swalClasses.radio, "\"></div>\n   <label for=\"").concat(swalClasses.checkbox, "\" class=\"").concat(swalClasses.checkbox, "\">\n     <input type=\"checkbox\" />\n     <span class=\"").concat(swalClasses.label, "\"></span>\n   </label>\n   <textarea class=\"").concat(swalClasses.textarea, "\"></textarea>\n   <div class=\"").concat(swalClasses['validation-message'], "\" id=\"").concat(swalClasses['validation-message'], "\"></div>\n   <div class=\"").concat(swalClasses.actions, "\">\n     <div class=\"").concat(swalClasses.loader, "\"></div>\n     <button type=\"button\" class=\"").concat(swalClasses.confirm, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.deny, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.cancel, "\"></button>\n   </div>\n   <div class=\"").concat(swalClasses.footer, "\"></div>\n   <div class=\"").concat(swalClasses['timer-progress-bar-container'], "\">\n     <div class=\"").concat(swalClasses['timer-progress-bar'], "\"></div>\n   </div>\n </div>\n").replace(/(^|\n)\s*/g, '');
 
   const resetOldContainer = () => {
     const oldContainer = getContainer();
@@ -638,11 +635,6 @@
     }
 
     handleBackdropParam(container, params.backdrop);
-
-    if (!params.backdrop && params.allowOutsideClick) {
-      warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
-    }
-
     handlePositionParam(container, params.position);
     handleGrowParam(container, params.grow); // Custom class
 
@@ -1125,7 +1117,10 @@
     renderContent(instance, params);
     renderActions(instance, params);
     renderFooter(instance, params);
-    runIfFunction(params.didRender, getPopup());
+
+    if (typeof params.didRender === 'function') {
+      params.didRender(getPopup());
+    }
   };
 
   /*
@@ -1492,6 +1487,10 @@
 
 
   const showWarningsForParams = params => {
+    if (!params.backdrop && params.allowOutsideClick) {
+      warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
+    }
+
     for (const param in params) {
       checkIfParamIsValid(param);
 
@@ -1673,6 +1672,7 @@
     }
 
     if (!isScrollable(container) && target.tagName !== 'INPUT' && // #1603
+    target.tagName !== 'TEXTAREA' && // #2266
     !(isScrollable(getHtmlContainer()) && // #1944
     getHtmlContainer().contains(target))) {
       return true;
@@ -1758,7 +1758,14 @@
       globalState.keydownHandlerAdded = false;
     }
 
-    if (container.parentNode) {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent); // workaround for #2088
+    // for some reason removing the container in Safari will scroll the document to bottom
+
+    if (isSafari) {
+      container.setAttribute('style', 'display:none !important');
+      container.removeAttribute('class');
+      container.innerHTML = '';
+    } else {
       container.remove();
     }
 
@@ -1821,7 +1828,10 @@
     const container = getContainer(); // If animation is supported, animate
 
     const animationIsSupported = animationEndEvent && hasCssAnimation(popup);
-    runIfFunction(innerParams.willClose, popup);
+
+    if (typeof innerParams.willClose === 'function') {
+      innerParams.willClose(popup);
+    }
 
     if (animationIsSupported) {
       animatePopup(instance, popup, container, innerParams.returnFocus, innerParams.didClose);
@@ -1843,7 +1853,9 @@
 
   const triggerDidCloseAndDispose = (instance, didClose) => {
     setTimeout(() => {
-      runIfFunction(didClose);
+      if (typeof didClose === 'function') {
+        didClose.bind(instance.params)();
+      }
 
       instance._destroy();
     });
@@ -1901,7 +1913,7 @@
 
     if (input) {
       input.setAttribute('aria-invalid', true);
-      input.setAttribute('aria-describedBy', swalClasses['validation-message']);
+      input.setAttribute('aria-describedby', swalClasses['validation-message']);
       focusInput(input);
       addClass(input, swalClasses.inputerror);
     }
@@ -1918,7 +1930,7 @@
 
     if (input) {
       input.removeAttribute('aria-invalid');
-      input.removeAttribute('aria-describedBy');
+      input.removeAttribute('aria-describedby');
       removeClass(input, swalClasses.inputerror);
     }
   }
@@ -2221,7 +2233,11 @@
   const openPopup = params => {
     const container = getContainer();
     const popup = getPopup();
-    runIfFunction(params.willOpen, popup);
+
+    if (typeof params.willOpen === 'function') {
+      params.willOpen(popup);
+    }
+
     const bodyStyles = window.getComputedStyle(document.body);
     const initialBodyOverflow = bodyStyles.overflowY;
     addClasses$1(container, popup, params); // scrolling is 'hidden' until animation is done, after that 'auto'
@@ -2239,7 +2255,10 @@
       globalState.previousActiveElement = document.activeElement;
     }
 
-    setTimeout(() => runIfFunction(params.didOpen, popup));
+    if (typeof params.didOpen === 'function') {
+      setTimeout(() => params.didOpen(popup));
+    }
+
     removeClass(container, swalClasses['no-transition']);
   };
 
@@ -2300,6 +2319,7 @@
     if (params.input === 'select' || params.input === 'radio') {
       handleInputOptions(instance, params);
     } else if (['text', 'email', 'number', 'tel', 'textarea'].includes(params.input) && (hasToPromiseFn(params.inputValue) || isPromise(params.inputValue))) {
+      showLoading(getConfirmButton());
       handleInputValue(instance, params);
     }
   };
@@ -2975,7 +2995,10 @@
       delete globalState.deferDisposalTimer;
     }
 
-    runIfFunction(innerParams.didDestroy);
+    if (typeof innerParams.didDestroy === 'function') {
+      innerParams.didDestroy();
+    }
+
     disposeSwal(this);
   }
 
@@ -3069,7 +3092,7 @@
     };
   });
   SweetAlert.DismissReason = DismissReason;
-  SweetAlert.version = '11.0.7';
+  SweetAlert.version = '11.0.18';
 
   const Swal = SweetAlert;
   Swal.default = Swal;

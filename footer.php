@@ -12,7 +12,7 @@
     <!-- end of logo -->
 
     <!-- copyright -->
-    <div class="footer__copyright bg-gray-500">
+    <div class="footer__copyright bg-blue-500">
         <div class="container">
             <p>&COPY; <?= date('Y') . " " . SITE['name']; ?> | Todos os direitos reservados</p>
         </div>

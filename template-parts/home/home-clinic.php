@@ -6,7 +6,7 @@
             <div class="clinic__row__image">
                 <picture>
                     <source srcset="<?= get_template_directory_uri(); ?>/assets/images/imagem-clinica-veterinaria.webp" type="image/webp">
-                    <img src="<?= get_template_directory_uri(); ?>/assets/images/imagem-clinica-veterinaria.jpg" alt="<?= SITE['name']; ?> - Clinica Veterinária" loading="lazy">
+                    <img src="<?= get_template_directory_uri(); ?>/assets/images/imagem-clinica-veterinaria.png" alt="<?= SITE['name']; ?> - Clinica Veterinária" loading="lazy">
                 </picture>
             </div>
             <!-- end of image -->

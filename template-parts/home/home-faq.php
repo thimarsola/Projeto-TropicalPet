@@ -26,7 +26,8 @@
                             <!-- header -->
                             <header class="faq__row__container__content__item__header">
                                 <h3><?= $question['question']; ?></h3>
-                                <span></span>
+                                <span>+</span>
+                                <span>-</span>
                             </header>
                             <!-- end of header -->
 
@@ -44,6 +45,12 @@
                 <!-- end of content -->
             </div>
             <!-- end of container -->
+
+            <!-- image -->
+            <div class="faq__row__image">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/vetor-faq.svg" alt="Perguntas Frequentes" loading="lazy">
+            </div>
+            <!-- end of image -->
         </div>
         <!-- end of row -->
     </div>

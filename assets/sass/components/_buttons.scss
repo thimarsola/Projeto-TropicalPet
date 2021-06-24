@@ -1,10 +1,10 @@
-@use '../abstracts' as *;
+ @use '../abstracts' as *;
 
 .btn {
     display: inline-block !important;
     margin: 0;
     padding: 2rem 6rem;
-    border-radius: none;
+    border-radius: 20rem;
     cursor: pointer;
     vertical-align: middle;
     outline: none;
@@ -14,11 +14,11 @@
     line-height: 1 !important;
 
     font: {
-        family: "Open Sans Bold", sans-serif !important;
-        size: var(--fs-400);
+        family: "Kodchasan SemiBold", sans-serif !important;
+        size: 1.8rem;
     }
 
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     &:active {
         transform: scale(1.1);
@@ -28,15 +28,15 @@
 
 @each $color, $shade in $colors {
     @each $prop, $value in $shade {
-        @if $color == neutral {
+        @if $value == white {
             .btn-#{$color}-#{$prop} {
                 background-color: $value;
-                color: white;
+                color: var(--clr-neutral-500);
                 @include transition(all);
 
                 &:hover {
-                    color: var(--clr-yellow-500);
-                    background-color: white;
+                    color: var(--clr-white-500);
+                    background-color: var(--clr-orange-900);
                     @include transition(all);
                 }
             }
@@ -54,3 +54,35 @@
         }
     }
 }
+
+ @each $color, $shade in $colors {
+     @each $prop, $value in $shade {
+         @if $value == white {
+             .btn-outline-#{$color}-#{$prop} {
+                 border: 2px solid $value;
+                 color: $value;
+                 @include transition(all);
+
+                 &:hover {
+                     border-color: $value;
+                     color: var(--clr-neutral-500);
+                     background-color: $value;
+                     @include transition(all);
+                 }
+             }
+         } @else {
+             .btn-outline-#{$color}-#{$prop} {
+                 border: 2px solid $value;
+                 color: $value;
+                 @include transition(background-color);
+
+                 &:hover {
+                     border-color: $value;
+                     background-color: $value;
+                     color: var(--clr-white-500);
+                     @include transition(background-color);
+                 }
+             }
+         }
+     }
+ }

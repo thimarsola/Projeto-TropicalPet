@@ -1,5 +1,5 @@
 $(function () {
-    $('.gallery__grid').magnificPopup({
+    $('.gallery__row').magnificPopup({
         delegate: 'a',
         type: 'image',
         gallery: {

@@ -7,7 +7,7 @@
             <div class="about__row__image">
                 <picture>
                     <source srcset="<?= get_template_directory_uri(); ?>/assets/images/imagem-quem-somos.webp" type="image/webp">
-                    <img src="<?= get_template_directory_uri(); ?>/assets/images/imagem-quem-somos.jpg" alt="<?= SITE['name']; ?> - Quem somos" loading="lazy">
+                    <img src="<?= get_template_directory_uri(); ?>/assets/images/imagem-quem-somos.png" alt="<?= SITE['name']; ?> - Quem somos" loading="lazy">
                 </picture>
             </div>
             <!-- end of image -->
@@ -25,7 +25,7 @@
                 <p>Temos uma clínica veterinária planejada e equipada para oferecer o melhor atendimento aos nossos clientes de quatro patas.</p>
                 <br>
                 <p>Estamos há 40 anos atendendo os nossos clientes da melhor forma possível.</p>
-                <a class="btn btn-outline-blue-500" rel="nofollow" href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]["number"]); ?>&text=<?= urlencode(CONTACT["whatsapp"]["message"]); ?>" target="_blank" title="Vamos conversar?">Fale conosco</a>
+                <a class="btn btn-outline-orange-500" rel="nofollow" href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]["number"]); ?>&text=<?= urlencode(CONTACT["whatsapp"]["message"]); ?>" target="_blank" title="Vamos conversar?">Fale conosco</a>
             </div>
             <!-- end of container -->
 

@@ -8,21 +8,24 @@
 
     a {
         margin: 0;
-        padding: var(--fs-600);
+        padding: 0;
+        width: var(--fs-1000);
+        height: var(--fs-1000);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--fs-800);
+        font-size: var(--fs-500);
         color: white;
         line-height: 1;
-        border-radius: 5rem;
-        background-color: var(--clr-dark-900);
-        @include transition(background-color);
+        border-radius: 50%;
+        background: radial-gradient(50% 50% at 50% 50%, #25D366 0%, #1B9849 100%);
+        transform: scale(1);
+        @include transition(transform);
 
         &:hover,
         &:focus {
-            background-color: var(--clr-blue-500);
-            @include transition(background-color);
+            transform: scale(.9);
+            @include transition(transform);
         }
 
         i {
