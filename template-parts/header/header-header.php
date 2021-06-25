@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header<?= is_page() ? ' p-fixed' : '' ?>">
     <div class="container">
         <!--navbar-->
         <div class="header__navbar">
@@ -9,7 +9,7 @@
 
             <div class="header__navbar__section">
                 <!-- toggle -->
-                <div class="header__navbar__section__toggle<?= is_page() ? ' toggle__pages' : '' ?>">
+                <div class="header__navbar__section__toggle">
                     <div class="header__navbar__section__toggle__bar"></div>
                     <div class="header__navbar__section__toggle__bar"></div>
                     <div class="header__navbar__section__toggle__bar"></div>
@@ -19,7 +19,7 @@
                 <!-- container -->
                 <div class="header__navbar__section__container">
                     <!-- nav -->
-                    <nav class="header__navbar__section__container__nav<?= is_page() ? ' header--pages' : '' ?>">
+                    <nav class="header__navbar__section__container__nav">
                         <h2 class="d-none">Menu de Navegação</h2>
                         <?php
                         if(is_home()){

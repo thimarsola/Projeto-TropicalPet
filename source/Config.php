@@ -75,7 +75,7 @@ define("CONTACT", [
     ],
     "mail" => "contato.tropicalpet@gmail.com",
     "address" => "Av. Água Funda, 121 - Taboão - São Bernardo do Campo",
-    "addressLink" => "https://g.page/tropicalpet_?share",
+    "addressLink" => "https://g.product/tropicalpet_?share",
     "instagram" => "https://www.instagram.com/tropicalpet_/",
     "facebook" => "https://www.facebook.com/tropicalpett/"
 ]);

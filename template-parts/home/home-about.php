@@ -25,7 +25,9 @@
                 <p>Temos uma clínica veterinária planejada e equipada para oferecer o melhor atendimento aos nossos clientes de quatro patas.</p>
                 <br>
                 <p>Estamos há 40 anos atendendo os nossos clientes da melhor forma possível.</p>
-                <a class="btn btn-outline-orange-500" rel="nofollow" href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]["number"]); ?>&text=<?= urlencode(CONTACT["whatsapp"]["message"]); ?>" target="_blank" title="Vamos conversar?">Fale conosco</a>
+
+                <?= whatsapp(formatPhone(CONTACT['whatsapp']['number']), CONTACT['whatsapp']['message'], 'Fale conosco',  'btn btn-outline-orange-500'); ?>
+
             </div>
             <!-- end of container -->
 

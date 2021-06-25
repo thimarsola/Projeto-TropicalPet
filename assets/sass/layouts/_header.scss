@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .header {
-    //display: block;
     position: fixed;
     display: flex;
     align-items: center;
@@ -19,6 +18,7 @@
 
         a{
             img{
+                height: 100%;
                 max-height: var(--fs-700);
             }
         }
@@ -60,10 +60,6 @@
             }
 
         }
-    }
-
-    &--pages{
-        color: white;
     }
 
     &--sticky{
@@ -185,12 +181,6 @@
                             transform: rotate(0) translate(0);
                             @include transition(transform);
                         }
-                    }
-                }
-
-                .toggle__pages{
-                    .header__navbar__section__toggle__bar{
-                        background-color: white;
                     }
                 }
 

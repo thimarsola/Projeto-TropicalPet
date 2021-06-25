@@ -1,86 +1,31 @@
 @use '../abstracts' as *;
 
 .footer{
-    position: relative;
-    top: 0;
-    left: 0;
-    color: white;
+    font-size: 1.4rem;
 
-    &__information{
-        padding: var(--fs-1100) 0;
-        text-align: center;
+    &__logo{
+        @include padding(var(--fs-600));
 
-        i{
-            font-size: var(--fs-1100) !important;
+        .container{
+            display: flex;
+            justify-content: center;
         }
 
-        &__menu{
-            ul{
-                margin: var(--fs-800) 0;
-                padding: 0;
-
-                li{
-                    display: inline-block;
-                    text-transform: uppercase;
-                    font-size: var(--fs-200);
-
-                    &:not(:last-child){
-                        margin-right: var(--fs-800);
-                    }
-
-                    a {
-                        position: relative;
-                        color: inherit;
-                        @include transition(color);
-
-                        &:hover {
-                            color: var(--clr-blue-500);
-                            @include transition(color);
-                        }
-                    }
-                }
-            }
-        }
-
-        &__social{
-            ul{
-                margin: var(--fs-800) 0;
-                padding: 0;
-
-                li{
-                    display: inline-block;
-                    font-size: var(--fs-700);
-
-                    &:not(:last-child){
-                        margin-right: var(--fs-800);
-                    }
-
-                    a {
-                        position: relative;
-                        color: inherit;
-                        @include transition(color);
-
-                        &:hover {
-                            color: var(--clr-blue-500);
-                            @include transition(color);
-                        }
-
-                        i{
-                            font-size: inherit !important;
-                        }
-                    }
-                }
-            }
-        }
-
-        &__copyright{
-            color: var(--clr-neutral-400);
+        img{
+            height: var(--fs-1000);
         }
     }
 
+    &__copyright{
+        @include padding(var(--fs-100));
+        text-align: center;
+    }
+
     &__developer{
+        color: var(--clr-white-500);
+
         &__row{
-            padding: var(--fs-200) 0;
+            @include padding(var(--fs-100));
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -94,7 +39,7 @@
                     @include transition(color);
 
                     &:hover{
-                        color: var(--clr-neutral-500);
+                        color: var(--clr-orange-900);
                         @include transition(color);
                     }
                 }
@@ -110,30 +55,12 @@
 
                     i{
                         margin-right: var(--fs-100);
-                        font-size: var(--fs-600) !important;
+                        font-size: var(--fs-200) !important;
                     }
 
                     &:hover{
-                        color: var(--clr-neutral-500);
+                        color: var(--clr-orange-900);
                         @include transition(color);
-                    }
-                }
-            }
-        }
-    }
-
-    //breakpoint mobile
-    @include mq(sm){
-        &__information{
-            &__menu{
-                ul{
-                    li{
-                        margin-right: 0 !important;
-                        display: block;
-
-                        &:not(:last-child){
-                            margin-bottom: var(--fs-400);
-                        }
                     }
                 }
             }

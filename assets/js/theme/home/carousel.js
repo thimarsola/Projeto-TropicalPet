@@ -6,7 +6,7 @@ $(function () {
         autoplay: true,
         autoplayTimeout: 3500,
         autoplayHoverPause: true,
-        autoHeight:true,
+        // autoHeight:true,
         items: 1
     });
 });

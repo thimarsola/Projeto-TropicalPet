@@ -27,7 +27,6 @@
                             <header class="faq__row__container__content__item__header">
                                 <h3><?= $question['question']; ?></h3>
                                 <span>+</span>
-                                <span>-</span>
                             </header>
                             <!-- end of header -->
 
