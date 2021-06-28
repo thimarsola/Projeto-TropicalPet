@@ -2,6 +2,7 @@ $orange: #F06600;
 $neutral: #666262;
 $blue: #ECF2F4;
 $white: #fff;
+$gray: #f8f8f8;
 
 $colors: (
     "orange": (
@@ -31,5 +32,8 @@ $colors: (
     ),
     "white":(
         500: $white
+    ),
+    "gray":(
+        500: $gray
     )
 );

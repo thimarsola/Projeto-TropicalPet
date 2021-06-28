@@ -42,12 +42,12 @@ define("SOCIAL", [
  * MAIL CONNECT
  */
 define("MAIL", [
-    "host" => "mail.goognet.com.br",
+    "host" => "mail.tropicalpets.com.br",
     "port" => "587",
-    "user" => "sender@goognet.com.br",
+    "user" => "sender@tropicalpets.com.br",
     "passwd" => "Contato123*",
     "from_name" => "Tropical Pet",
-    "from_email" => "thiago.marsola@goognet.com.br"
+    "from_email" => "contato.tropicalpet@gmail.com"
 ]);
 
 /**

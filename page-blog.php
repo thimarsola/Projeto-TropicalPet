@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 
-    <h1><?= get_the_title(); ?></h1>
-    <hr>
+<!-- featured -->
+<?php get_template_part('template-parts/blog/blog', 'featured'); ?>
+<!-- end of featured -->
+
+<!-- last -->
+<?php get_template_part('template-parts/blog/blog', 'last'); ?>
+<!-- end of last -->
+
 
 <?php get_footer(); ?>

@@ -18,3 +18,12 @@ require_once get_template_directory() . '/inc/Menu.php';
 
 //THUMBNAILS SUPPORT
 require_once get_template_directory() . '/inc/Thumbnails.php';
+
+//EXCERPT SUPPORT
+require_once get_template_directory() . '/inc/Excerpt.php';
+
+//PAGINATION SUPPORT
+require_once get_template_directory() . '/inc/Pagination.php';
+
+//SITEMAP SUPPORT
+require_once get_template_directory() . '/inc/Pagination.php';

@@ -1,4 +1,4 @@
-<header class="header<?= is_page() ? ' p-fixed' : '' ?>">
+<header class="header<?= is_page() || is_single() ? ' p-fixed' : '' ?>">
     <div class="container">
         <!--navbar-->
         <div class="header__navbar">
@@ -24,7 +24,7 @@
                         <?php
                         if(is_home()){
                             wp_nav_menu(array('theme_location' => 'header-home', 'container_class' => ''));
-                        }elseif (is_page()) {
+                        }else {
                             wp_nav_menu(array('theme_location' => 'header-menu', 'container_class' => ''));
                         }
                         ?>

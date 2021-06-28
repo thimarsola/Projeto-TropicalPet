@@ -36,6 +36,7 @@
                 <!-- end of goognet -->
 
                 <!-- validator -->
+                <?php if(!is_404()): ?>
                 <div class="footer__developer__row__validator">
 					<?php
 					$protocols = array('http://', 'http://www.', 'https://', 'https://www.', 'www.');
@@ -52,6 +53,7 @@
                         W3C Validator
                     </a>
                 </div>
+                <?php endif; ?>
                 <!-- end of validator -->
             </div>
             <!-- end of row -->

@@ -2,10 +2,19 @@
 <html lang="<?= SITE["lang"]; ?>">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NM4G2R9');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <link rel="alternate" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" hreflang="x-default" />
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --> <?php  if (!is_404()): ?>
-    <title><?php echo(is_home()) ? SITE["name"] : the_title() . " - " . SITE["name"]; ?></title> <?php else: ?> <title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <?php  if (!is_404()): ?>
+        <title><?php echo(is_home()) ? SITE["name"] : the_title() . " - " . SITE["name"]; ?></title> <?php else: ?> <title>
         <?= SITE["name"]; ?></title> <?php endif; ?>
     <base href="<?= get_site_url(); ?>">
     <meta name="description" content="<?= SITE["desc"]; ?>">
@@ -31,23 +40,28 @@
     <meta property="og:site_name" content="<?= SITE["name"] ?>"> <?php wp_head(); ?>
 </head>
 
-<body id="home" <?php body_class(); ?>> <?php
-    if (function_exists('custom_wp_body_open')) {
-        wp_body_open();
-    }
-    ?>
+<body id="home" <?php body_class(); ?>>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NM4G2R9"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php
+if (function_exists('custom_wp_body_open')) {
+    wp_body_open();
+}
+?>
 
-    <h1 class="d-none"><?php echo(is_home()) ? 'Tropical Pet' : the_title()?></h1>
+<h1 class="d-none"><?php echo(is_home()) ? 'Tropical Pet' : the_title()?></h1>
 
-    <?php
-        if(!is_404()):
-    ?>
-    <!--header-->
-    <?php get_template_part('template-parts/header/header', 'header'); ?>
-    <!--end of header-->
+<?php
+if(!is_404()):
+?>
+<!--header-->
+<?php get_template_part('template-parts/header/header', 'header'); ?>
+<!--end of header-->
 
-    <!-- whatsapp -->
-    <?php get_template_part('template-parts/header/header', 'whatsapp'); ?>
-    <!-- end of whatsapp -->
-    <!-- main -->
-    <main> <?php endif ?>
+<!-- whatsapp -->
+<?php get_template_part('template-parts/header/header', 'whatsapp'); ?>
+<!-- end of whatsapp -->
+<!-- main -->
+<main> <?php endif ?>

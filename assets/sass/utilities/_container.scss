@@ -30,9 +30,9 @@
         max-width: var(--xl);
     }
 
-    @include breakpoint(xxl) {
-        margin: 0 auto;
-        padding: 0 var(--gap);
-        max-width: var(--xxl);
-    }
+    //@include breakpoint(xxl) {
+    //    margin: 0 auto;
+    //    padding: 0 var(--gap);
+    //    max-width: var(--xxl);
+    //}
 }
